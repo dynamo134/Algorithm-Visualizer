@@ -1,0 +1,38 @@
+
+.type{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    font-family: "Roboto Slab ExtraLight";
+    background-color: #203952;
+    color: white;
+}
+
+.Cards{
+    background-color: #203952;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    position: center;
+    /* child-align: middle; */
+}
+.page-footer{
+    background-color: rgb(48, 51, 56);
+}
+.foot{
+    color:white;
+    background-color: black;
+}
+.greet{
+    text-align: center;
+    background-color: #203952;
+    color: white;
+    padding: 10px;
+}
+.navbar{
+    background-color: #343a40;
+}
+.greet-description{
+    font-size:xx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
