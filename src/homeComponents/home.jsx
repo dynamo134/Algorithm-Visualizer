@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 import Greet from "./greet";
 import TypeWriterC from "./typewriter";
 import Cards from "./cards";
-import Footer from "./footer";
+// import Footer from "./footer";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <Greet />
       <TypeWriterC />
       <Cards />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

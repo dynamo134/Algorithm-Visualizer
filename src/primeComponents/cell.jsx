@@ -1,27 +1,30 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './cell.css';
-class Cell extends Component {
-    render() {
-        return (
-            <div className={this.getClass()}>
-                <span >
-                    {this.props.cell.val}
-                </span>
-            </div>
-        );
-    }
-    getClass = () =>{
-        const { val, isVisiting,isChecking,isPrime} = this.props.cell;
-        if(isPrime){
+
+// Functional component Cell
+const Cell = ({ cell }) => {
+    // Helper function to determine the CSS class based on cell properties
+    const getClass = () => {
+        const { val, isVisiting, isChecking, isPrime } = cell;
+
+        // Determine the CSS class based on cell properties
+        if (isPrime) {
             return "cell cell-prime bg-success text-light m-2";
-        }else if( isVisiting ){
+        } else if (isVisiting) {
             return "cell cell-visiting m-2";
-        } else if( isChecking ){
+        } else if (isChecking) {
             return "cell cell-check m-2";
-        } else{
+        } else {
             return "cell m-2";
         }
-    }
-}
+    };
+
+    // Render the cell with the determined CSS class and value
+    return (
+        <div className={getClass()}>
+            <span>{cell.val}</span>
+        </div>
+    );
+};
 
 export default Cell;

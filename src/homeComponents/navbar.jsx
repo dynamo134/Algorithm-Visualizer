@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import About from './about';
+import './style.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg">
-      <Link className="navbar-brand" to="/">
+    <nav className="nav">
+      {/* <Link className="navbar-brand" to="/">
         Algorithm Visualizer
       </Link>
 
@@ -15,7 +16,8 @@ const Navbar = () => {
             About
           </Link>
         </li>
-      </ul>
+      </ul> */}
+      <h1>Algorithm Visualizer</h1>
     </nav>
   );
 };

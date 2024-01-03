@@ -29,8 +29,12 @@
     color: white;
     padding: 10px;
 }
-.navbar{
-    background-color: #343a40;
+.nav{
+    padding: 10px;
+    text-align: center;
+    border: 3px solid rgb(215, 117, 240);
+    background-color: #427185;
+    justify-content: center;
 }
 .greet-description{
     font-size:xx-large;

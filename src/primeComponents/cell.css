@@ -1,8 +1,8 @@
 .cell{
     height:50px;
     width:50px;
-    background-color: white;
-    outline:1px solid rgb(175, 216, 248);
+    background-color: rgb(245, 146, 146);
+    outline:1px solid rgb(0, 0, 0);
     display: inline-block;
     font-size: 25px;
     text-align: center;
@@ -10,50 +10,55 @@
     border-radius: 5px 5px;
 }
 
-.cell-prime{
-    background-color: #00f51d;
-    animation-name: isPrime;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-
+/* Styling for cells marked as prime numbers with animation */
+.cell-prime {
+    background-color: #00f51d; /* Set a specific background color for prime cells */
+    animation-name: isPrime; /* Use the isPrime animation for visual effect */
+    animation-duration: 1s; /* Set the duration of the animation to 1 second */
+    animation-delay: 0s; /* No initial delay for the animation */
+    animation-iteration-count: 1; /* Run the animation only once */
+    animation-timing-function: linear; /* Use a linear timing function for animation */
 }
+
+/* Keyframes animation for isPrime */
 @keyframes isPrime {
     0% {
-        transform: rotate(90deg);
-        background-color: rgba(0, 0, 66, 0.75);
-        border-radius: 100%;
+        transform: rotate(90deg); /* Rotate the cell 90 degrees at the start */
+        background-color: rgba(0, 0, 66, 0.75); /* Change background color at 0% */
+        border-radius: 100%; /* Apply a circular border-radius at the start */
     }
 
     50% {
-        background-color: rgba(17, 104, 217, 0.75);
-        transform: scale(1.5);
-
+        background-color: rgba(17, 104, 217, 0.75); /* Change background color at 50% */
+        transform: scale(1.5); /* Scale the cell by 1.5 at 50% */
     }
 
     75% {
-        background-color: rgba(0, 217, 159, 0.75);
-        transform: rotate(270deg);
-
+        background-color: rgba(0, 217, 159, 0.75); /* Change background color at 75% */
+        transform: rotate(270deg); /* Rotate the cell 270 degrees at 75% */
     }
 
     100% {
-
-        background-color: rgba(0, 190, 218, 0.75);
-        transform: rotate(360deg);
+        background-color: rgba(0, 190, 218, 0.75); /* Change background color at 100% */
+        transform: rotate(360deg); /* Rotate the cell 360 degrees at the end */
     }
 }
-.cell-check{
-    background-color: grey;
+
+/* Styling for cells marked as checking */
+.cell-check {
+    background-color: rgb(90, 135, 233); /* Set a specific background color for checking cells */
 }
-.cell-visiting{
-    outline:3px solid rgb(175, 216, 248);
-    animation-name: isVisiting;
-    animation-duration: 1s;
+
+/* Styling for cells being visited with animation */
+.cell-visiting {
+    outline: 3px solid rgb(0, 0, 0); /* Add an outline for visited cells */
+    animation-name: isVisiting; /* Use the isVisiting animation for visual effect */
+    animation-duration: 1s; /* Set the duration of the animation to 1 second */
 }
+
+/* Keyframes animation for isVisiting */
 @keyframes isVisiting {
-    50%{
-        transform: scale(1.5);
+    50% {
+        transform: scale(1.5); /* Scale the cell by 1.5 at 50% during visiting animation */
     }
 }
