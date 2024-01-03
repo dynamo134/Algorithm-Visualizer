@@ -1,18 +1,18 @@
 import React from 'react';
-import {makeStyles, withStyles} from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 
+// Custom styles using makeStyles
 const useStyles = makeStyles({
     root: {
         width: 200,
     },
 });
 
-
-const CSlider = withStyles({
+// Custom styled Slider using withStyles
+const CustomSlider = withStyles({
     root: {
-       // color: "#ffffff",
         height: 3,
         padding: "13px 0",
     },
@@ -22,31 +22,35 @@ const CSlider = withStyles({
     },
     thumb: {
         backgroundColor: "#fff",
-        //color: "#fff",
     },
 })(Slider);
 
+// Function to display value as text
 function valuetext(value) {
     return `${value}`;
 }
 
-
-
-export default function RangeSlider(props) {
+// RangeSlider functional component
+const RangeSlider = (props) => {
+    // Retrieve styles using makeStyles
     const classes = useStyles();
+    // State to manage slider values
     const [value, setValue] = React.useState([20, 37]);
 
+    // Handle change event when the slider values are changed
     const handleChange = (event, newValue) => {
         setValue(newValue);
-
     };
+
+    // Handle commit event when the slider values are committed
     const handleCommit = (event, newValue) => {
         console.log(newValue);
     };
 
     return (
         <div className={classes.root}>
-            <CSlider
+            {/* Custom styled Slider component */}
+            <CustomSlider
                 disabled={props.disable}
                 value={value}
                 onChange={handleChange}
@@ -56,9 +60,12 @@ export default function RangeSlider(props) {
                 getAriaValueText={valuetext}
                 valueLabelDisplay="off"
             />
+            {/* Typography to display label for the range slider */}
             <Typography id="range-slider" gutterBottom>
                 Value range
             </Typography>
         </div>
     );
-}
+};
+
+export default RangeSlider;

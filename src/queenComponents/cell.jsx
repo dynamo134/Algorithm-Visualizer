@@ -1,38 +1,44 @@
-import React, {Component} from 'react';
-import './style.css'
+import React from 'react';
+import './style.css';
 import queen from './queen.png';
-class Cell extends Component {
-    render() {
-        return (
-            <div className={this.getClassName()} style={this.getStyled()}>
-                { this.props.cell.isPresent && <img src={queen} height='100px' style={{padding:"25px"}}/> }
-            </div>
-        );
-    }
-    getClassName = ()=>{
-        if(this.props.cell.isAttacked){
+
+// Functional component for displaying each cell in the board
+const Cell = (props) => {
+    // Function to determine the CSS class based on the cell's state
+    const getClassName = () => {
+        if (props.cell.isAttacked) {
             return "boardCell attacked";
-        } else if(this.props.cell.isCurrent){
+        } else if (props.cell.isCurrent) {
             return "boardCell current";
-        }else if(this.props.cell.isPresent){
+        } else if (props.cell.isPresent) {
             return "boardCell present";
-        }else if(this.props.cell.isChecked){
+        } else if (props.cell.isChecked) {
             return "boardCell checked";
-        } else{
+        } else {
             return "boardCell";
         }
-    }
-    getStyled = () =>{
-        if( (this.props.cell.row+this.props.cell.col)%2 === 0 ){
+    };
+
+    // Function to determine the background color style based on the cell's position
+    const getStyled = () => {
+        if ((props.cell.row + props.cell.col) % 2 === 0) {
             return {
-                backgroundColor:"white"
-            }
-        }else{
+                backgroundColor: "white"
+            };
+        } else {
             return {
-                backgroundColor:"grey"
-            }
+                backgroundColor: "grey"
+            };
         }
-    }
-}
+    };
+
+    return (
+        // Cell container with dynamic class and style
+        <div className={getClassName()} style={getStyled()}>
+            {/* Display queen image if the cell is present */}
+            {props.cell.isPresent && <img src={queen} height='100px' style={{ padding: "25px" }} />}
+        </div>
+    );
+};
 
 export default Cell;

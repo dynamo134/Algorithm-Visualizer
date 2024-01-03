@@ -1,26 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Cell from "./cell";
 import './style.css';
-class Cells extends Component {
-    render() {
-        return (
-            <div className='booard m-5' >
-                {this.props.board.map( (row,rowidx)=>{
-                    return(
-                        <div key={rowidx}>
-                            {row.map( (cell,cellidx)=>{
-                                return(
-                                    <Cell
-                                        key={cellidx}
-                                        cell={cell}/>
-                                );
-                            } )}
-                        </div>
-                    );
-                } )}
-            </div>
-        );
-    }
-}
+
+// Functional component for displaying the board cells
+const Cells = (props) => {
+    return (
+        // Board container with margin
+        <div className='board-container m-5'>
+            {/* Mapping through each row in the board */}
+            {props.board.map((row, rowidx) => (
+                <div key={rowidx}>
+                    {/* Mapping through each cell in the row */}
+                    {row.map((cell, cellidx) => (
+                        <Cell key={cellidx} cell={cell} />
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
+};
 
 export default Cells;
